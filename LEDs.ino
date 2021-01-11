@@ -1,6 +1,6 @@
 //this program is used for blinking 2 LEDs on the basis of input provided by the user.
-int redpin = 9;
-int yellowpin = 10;
+int redpin = 7;
+int yellowpin = 8;
 int redblinks;
 int yellowblinks;
 String redmessage = "RED LED IS BLINKING";
@@ -13,11 +13,11 @@ void setup(){
 }
 
 void loop(){
-  Serial.println("How many times you want the red LED to blink ?");
+  Serial.println("How many times the red LED should blink ?");
   while(Serial.available()==0){}
   redblinks = Serial.parseInt();
 
-  Serial.println("How many times you want the yellow LED to blink ?");
+  Serial.println("How many times the yellow LED should blink ?");
   while(Serial.available()==0){}
   yellowblinks = Serial.parseInt();
 
@@ -26,9 +26,9 @@ void loop(){
     Serial.print("You are on blink");
     Serial.println(j);
     digitalWrite(redpin,HIGH);
-    delay(250);
+    delay(500);
     digitalWrite(redpin,LOW);
-    delay(250);
+    delay(500);
   }
   Serial.print(" ");
   
@@ -37,9 +37,11 @@ void loop(){
     Serial.print("You are on blink");
     Serial.println(i);
     digitalWrite(yellowpin,HIGH);
-    delay(250);
+    delay(500);
     digitalWrite(yellowpin,LOW);
-    delay(250);
+    delay(500);
   }
+  
   Serial.print(" ");
+  
 }
